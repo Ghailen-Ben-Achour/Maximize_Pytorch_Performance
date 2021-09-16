@@ -11,6 +11,8 @@ from train import train
 def get_args():
     parser = ArgumentParser(description='Torchscript module')
     parser.add_argument('--module', type=str, default='scripted')
+    parser.add_argument('--batch_size', type=int, default=100)
+    parser.add_argument('--epoch', type=int, default=2)
     args = parser.parse_args()
     return args
 
@@ -33,12 +35,12 @@ test_data = datasets.MNIST(
 
 loaders = {
     'train' : torch.utils.data.DataLoader(train_data, 
-                                          batch_size=100, 
+                                          batch_size=args.batch_size, 
                                           shuffle=True, 
                                           num_workers=2),
     
     'test'  : torch.utils.data.DataLoader(test_data, 
-                                          batch_size=100, 
+                                          batch_size=args.batch_size, 
                                           shuffle=True, 
                                           num_workers=2),
 }
@@ -50,6 +52,6 @@ else:
 
 optimizer = optim.Adam(cnn.parameters(), lr = 0.01) 
 loss_func = nn.CrossEntropyLoss()   
-num_epochs = 2
+num_epochs = args.epoch
       
 train(num_epochs, cnn, loaders, loss_func, optimizer, device)
