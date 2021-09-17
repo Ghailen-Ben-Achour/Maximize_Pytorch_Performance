@@ -59,7 +59,7 @@ def train(training_steps, generator, discriminator, loss, generator_optimizer, d
 
         # add .detach() here think about this
         generator_discriminator_out = discriminator(generated_data.detach())
-        generator_discriminator_loss = loss(generator_discriminator_out, torch.zeros(batch_size).reshape((batch_size,1)).cuda())
+        generator_discriminator_loss = loss(generator_discriminator_out, torch.zeros(batch_size).reshape((batch_size,1)).to(device))
         discriminator_loss = (true_discriminator_loss + generator_discriminator_loss) / 2
         discriminator_loss.backward()
         discriminator_optimizer.step()
