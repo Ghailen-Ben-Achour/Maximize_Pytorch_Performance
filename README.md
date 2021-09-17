@@ -2,7 +2,7 @@
 Pytorch tips to train NN faster
 
 ## Torchscript
-
+```torch.jit``` enables to move from **eager execution** to **graph execution**.
 
 |batch size| Architecture |Module | GPU Training Time | 
 |----------|--------------|-------|-----|
