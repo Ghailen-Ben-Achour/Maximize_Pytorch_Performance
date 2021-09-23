@@ -6,13 +6,14 @@ from modules import CNN_scripted, CNN
 from torch import optim
 from torch import nn
 from argparse import ArgumentParser
-from train import train
+import train
 
 def get_args():
     parser = ArgumentParser(description='Torchscript module')
     parser.add_argument('--module', type=str, default='scripted')
-    parser.add_argument('--batch_size', type=int, default=100)
-    parser.add_argument('--epoch', type=int, default=2)
+    parser.add_argument('--batch_size', type=int, default=200)
+    parser.add_argument('--epoch', type=int, default=4)
+    parser.add_argument('--mixed_prec', type=bool, default=False)
     args = parser.parse_args()
     return args
 
@@ -22,13 +23,13 @@ args = get_args()
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 train_data = datasets.MNIST(
-    root = '../data',
+    root = '../../data',
     train = True,                         
     transform = ToTensor(), 
     download = True,            
 )
 test_data = datasets.MNIST(
-    root = '../data', 
+    root = '../../data', 
     train = False, 
     transform = ToTensor()
 )
@@ -53,5 +54,11 @@ else:
 optimizer = optim.Adam(cnn.parameters(), lr = 0.01) 
 loss_func = nn.CrossEntropyLoss()   
 num_epochs = args.epoch
-      
-train(num_epochs, cnn, loaders, loss_func, optimizer, device)
+
+print(args.mixed_prec)
+if args.mixed_prec==True:
+  print("training mixed precision")
+  train.train_mixed_prec(num_epochs, cnn, loaders, loss_func, optimizer, device)
+else:
+  print("training float32")
+  train.train(num_epochs, cnn, loaders, loss_func, optimizer, device)
