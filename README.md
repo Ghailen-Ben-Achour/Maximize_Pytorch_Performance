@@ -14,3 +14,4 @@ This repository presents faster and more effective ways to train neural networks
 Generally, The effect of ```torch.jit``` is better using GPUs. (on CPUs results are expected to be similar)
 
 ## Mixed Precision
+Mixed precision allows faster operations.
