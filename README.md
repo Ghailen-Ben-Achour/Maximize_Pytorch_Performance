@@ -12,3 +12,5 @@ This repository presents faster and more effective ways to train neural networks
 |8| GAN | ScriptModule  | 28.16s  |
 
 Generally, The effect of ```torch.jit``` is better using GPUs. (on CPUs results are expected to be similar)
+
+## Mixed Precision
