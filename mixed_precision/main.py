@@ -10,7 +10,7 @@ import train
 
 def get_args():
     parser = ArgumentParser(description='Torchscript module')
-    parser.add_argument('--module', type=str, default='scripted')
+    parser.add_argument('--script_module', type=bool, default=true)
     parser.add_argument('--batch_size', type=int, default=200)
     parser.add_argument('--epoch', type=int, default=4)
     parser.add_argument('--mixed_prec', type=bool, default=False)
