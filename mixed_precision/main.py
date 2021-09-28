@@ -29,7 +29,7 @@ train_data = datasets.MNIST(
     download = True,            
 )
 test_data = datasets.MNIST(
-    root = '../../data', 
+    root = '../data', 
     train = False, 
     transform = ToTensor()
 )
