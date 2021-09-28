@@ -23,7 +23,7 @@ args = get_args()
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 train_data = datasets.MNIST(
-    root = '../../data',
+    root = '../data',
     train = True,                         
     transform = ToTensor(), 
     download = True,            
