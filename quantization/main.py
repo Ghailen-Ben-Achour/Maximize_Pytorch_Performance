@@ -17,10 +17,10 @@ def get_args():
 args = get_args()
 max_int= args.input_length
 batch_size= args.batch_size
-training_steps = args.epoch
+
 
 input_length = int(math.log(max_int, 2))
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
 
 # Models
 if args.module_script:
