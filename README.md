@@ -1,5 +1,5 @@
 # Maximize_Pytorch_Performance
-This repository presents faster and more effective ways to train neural networks.
+This repository presents faster and more effective ways to train/deploy neural networks.
 
 ## Torchscript
 ```torch.jit``` enables to move from **eager execution** to **graph execution**.
