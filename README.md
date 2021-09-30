@@ -15,3 +15,4 @@ Generally, The effect of ```torch.jit``` is better using GPUs. (on CPUs results 
 
 ## Mixed Precision
 Mixed precision allows faster operations. It is a technique for substantially reducing neural net training time by performing as many operations as possible in half-precision floating point, FP16, instead of the (PyTorch default) single-precision floating point, FP32. the ```torch.cuda.amp``` mixed-precision training module forthcoming could deliver speed-ups of 50-60% in large model training jobs with just a handful of new lines of code.
+To train a basic CNN model with mixed precision, access ```mixed_precision``` folder.
