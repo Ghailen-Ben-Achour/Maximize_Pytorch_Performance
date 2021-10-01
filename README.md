@@ -23,4 +23,4 @@ python main.py --mixed_prec True
 ```
 
 ## Quantization
-Quantization refers to techniques for performing computations and storing tensors at lower bitwidths than floating point precision.
+Quantization refers to techniques for performing computations and storing tensors at lower bitwidths than floating point precision. The technique used in this tutorial is FP32 to INT8 quantization.
