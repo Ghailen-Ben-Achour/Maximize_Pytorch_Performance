@@ -23,4 +23,4 @@ python main.py --mixed_prec True
 ```
 
 ## Quantization
-Quantization refers to techniques for performing computations and storing tensors at lower bitwidths than floating point precision. The technique used in this tutorial is FP32 to INT8 quantization allowing for a 4x reduction in the model size and a 4x reduction in memory bandwidth requirements. More information about pytorch quantization can be found [here](https://pytorch.org/docs/stable/quantization.html). A basic example
+Quantization refers to techniques for performing computations and storing tensors at lower bitwidths than floating point precision. The technique used in this tutorial is FP32 to INT8 quantization allowing for a 4x reduction in the model size and a 4x reduction in memory bandwidth requirements. More information about pytorch quantization can be found [here](https://pytorch.org/docs/stable/quantization.html). A basic example can be found in
