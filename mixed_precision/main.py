@@ -46,7 +46,7 @@ loaders = {
                                           num_workers=2),
 }
 
-if (args.sript_module):
+if (args.script_module):
   cnn = CNN_scripted().to(device)
 else:
   cnn = CNN().to(device)
